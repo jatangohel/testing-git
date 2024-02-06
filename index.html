@@ -1,0 +1,107 @@
+<html>
+
+<head>
+  <title>Multiplication Table</title>
+</head>
+
+<body id="keyEvents">
+
+  <div class="container">
+    <div class="box" id="w-box">
+      <h2>w</h2>
+    </div>
+    <div class="box" id="a-box">
+      <h2>a</h2>
+    </div>
+    <div class="box" id="s-box">
+      <h2>s</h2>
+    </div>
+    <div class="box" id="d-box">
+      <h2>d</h2>
+    </div>
+    <div class="box" id="k-box">
+      <h2>k</h2>
+    </div>
+
+    <div class="box" id="x-box">
+      <h2>x</h2>
+    </div>
+  </div>
+  <button id="myBtn">Try it</button>
+
+  <div>
+    <p id="demo2"></p>
+  </div>
+
+  <p id="demo"></p>
+</body>
+<style>
+  .container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .box {
+    padding: 60px;
+    height: 200px;
+    width: 100px;
+    font-size: 70px;
+    margin: 20px;
+    background-color: #8a2be2;
+    color: wheat;
+  }
+</style>
+<script>
+  document.getElementById("keyEvents").addEventListener("keydown", onKeyPressed);
+
+  function onKeyPressed(event) {
+    if (event.key === "w") {
+      changeColorsAndPlaySound("w-box", "sounds/w.mp3");
+    }
+
+    if (event.key === "a") {
+      changeColorsAndPlaySound("a-box", "sounds/a.mp3");
+    }
+
+    if (event.key === "s") {
+      changeColorsAndPlaySound("s-box", "sounds/s.mp3");
+    }
+
+    if (event.key === "d") {
+      changeColorsAndPlaySound("d-box", "sounds/d.mp3");
+    }
+
+    if (event.key === "k") {
+      changeColorsAndPlaySound("k-box", "sounds/k.mp3");
+    }
+
+    if (event.key === "x") {
+      changeColorsAndPlaySound("x-box", "sounds/x.mp3");
+    }
+  }
+
+  function changeColorsAndPlaySound(boxId, soundFilePath) {
+    var soundPlay = new Audio(soundFilePath);
+    soundPlay.play();
+    if (document.getElementById(boxId).style.backgroundColor === "rgb(242, 242, 242)") {
+      document.getElementById(boxId).style.backgroundColor = "#8a2be2";
+    }
+    else {
+      document.getElementById(boxId).style.backgroundColor = "#f2f2f2";
+    }
+  }
+
+
+  // document.getElementById("myBtn").addEventListener("click", displayDate);
+
+  // function displayDate(event) {
+  //   console.log(event);
+  //   console.log("function called");
+  //   document.getElementById("demo").innerHTML = Date();
+  // }
+</script>
+
+</html>
